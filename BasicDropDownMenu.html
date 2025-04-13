@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basic Drop Down Menu</title>
+  <style>
+    h1 {
+      font-family: 'Didot', serif;
+      font-size: 150px;
+    }
+    .author {
+      font-size: 100px;
+    }
+    .message {
+      font-size: 100px;
+      margin-top: 20px;
+    }
+    select {
+      font-size: 100px;
+      padding: 10px;
+      height: 120px; /* Make the height similar to the text size */
+      width: auto;
+      font-family: 'Didot', serif;
+    }
+  </style>
+</head>
+<body>
+
+  <h1><strong>Welcome To My Basic Drop Down Menu!</strong></h1>
+  <p class="author">By: Yash M.</p>
+
+  <select id="personType" onchange="showMessage()">
+    <option value="">Select...</option>
+    <option value="morning">Morning Person</option>
+    <option value="night">Night Person</option>
+  </select>
+
+  <p id="message" class="message"></p>
+
+  <script>
+    function showMessage() {
+      var selectedOption = document.getElementById("personType").value;
+      var messageElement = document.getElementById("message");
+
+      if (selectedOption === "morning") {
+        messageElement.textContent = "You're A Morning Person ☀️";
+      } else if (selectedOption === "night") {
+        messageElement.textContent = "You're A Night Person 🌑";
+      } else {
+        messageElement.textContent = "";  // Clear the message if no option is selected
+      }
+    }
+  </script>
+
+</body>
+</html>
+
+
